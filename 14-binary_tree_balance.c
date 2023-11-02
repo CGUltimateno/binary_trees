@@ -18,9 +18,9 @@ int binary_tree_balance(const binary_tree_t *tree)
  * @tree: pointer to the root node of the tree to count the leaves in
  * Return: biggest side
  */
-size_t help_scale(const binary_tree_t *tree)
+int help_scale(const binary_tree_t *tree)
 {
-    size_t left, right;
+    int left, right;
     if (tree == NULL)
         return (-1);
     left = help_scale(tree->left);
