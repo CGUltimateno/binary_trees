@@ -9,8 +9,8 @@ int binary_tree_balance(const binary_tree_t *tree)
     int left_leaves, right_leaves;
     if (tree == NULL)
         return (0);
-    left_leaves = binary_tree_leaves(tree->left);
-    right_leaves = binary_tree_leaves(tree->right);
+    left_leaves = help_scale(tree->left);
+    right_leaves = help_scale(tree->right);
     return (left_leaves - right_leaves);
 }
 /**
