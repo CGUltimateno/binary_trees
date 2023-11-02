@@ -25,8 +25,5 @@ size_t help_scale(const binary_tree_t *tree)
         return (-1);
     left = help_scale(tree->left);
     right = help_scale(tree->right);
-    if (left > right)
-        return (left + 1);
-    else
-        return (right + 1);
+    return (1 + (left > right ? left : right));
 }
