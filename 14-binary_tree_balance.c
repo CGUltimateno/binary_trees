@@ -13,3 +13,20 @@ int binary_tree_balance(const binary_tree_t *tree)
     right_leaves = binary_tree_leaves(tree->right);
     return (left_leaves - right_leaves);
 }
+/**
+ * help_scale - helper function to find longest path
+ * @tree: pointer to the root node of the tree to count the leaves in
+ * Return: biggest side
+ */
+size_t help_scale(const binary_tree_t *tree)
+{
+    size_t left, right;
+    if (tree == NULL)
+        return (-1);
+    left = help_scale(tree->left);
+    right = help_scale(tree->right);
+    if (left > right)
+        return (left + 1);
+    else
+        return (right + 1);
+}
